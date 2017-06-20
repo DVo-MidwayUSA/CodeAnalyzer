@@ -26,16 +26,18 @@ class FileTypeAnalyzer {
     }
 
     analyze() {
-        fileTypes.forEach((fileType) => {
-            glob(fileType.pattern, (error, files) => {
-                exclusions.forEach((exclusion) => {
-                    _.remove(files, (file) => {
-                        return minimatch(file, exclusion.pattern)
-                    })
-                })
+        fileTypes.forEach(this.getFilesByType)
+    }
 
-                console.log(`${fileType.name} File Count:`, files.length)
+    getFilesByType(fileType) {
+        glob(fileType.pattern, (error, files) => {
+            exclusions.forEach((exclusion) => {
+                _.remove(files, (file) => {
+                    return minimatch(file, exclusion.pattern)
+                })
             })
+
+            console.log(`${process.cwd()} - ${fileType.name} File Count:`, files.length)
         })
     }
 }
