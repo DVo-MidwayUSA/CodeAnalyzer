@@ -28,6 +28,7 @@
         "semi": [
             "error",
             "never"
-        ]
+        ],
+        "require-jsdoc": "off"
     }
 }
