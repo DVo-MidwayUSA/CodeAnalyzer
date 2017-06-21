@@ -1,0 +1,31 @@
+{
+    "directories": [
+        "C:\\Workspaces\\TFS15\\Website\\Master\\WWW\\WWW.Web",
+        "C:\\Workspaces\\TFS15\\Website\\Master\\WWW\\WWW.AcceptanceTests",
+        "C:\\Workspaces\\TFS15\\Website\\Master\\WWW\\WWW.ApplicationLogic",
+        "C:\\Workspaces\\TFS15\\Website\\Master\\WWW\\WWW.ApplicationLogic.Tests",
+        "C:\\Workspaces\\TFS15\\Website\\Master\\WWW\\WWW.DataAccess",
+        "C:\\Workspaces\\TFS15\\Website\\Master\\WWW\\WWW.Infrastructure",
+        "C:\\Workspaces\\TFS15\\Website\\Master\\WWW\\WWW.Model",
+        "C:\\Workspaces\\TFS15\\Website\\Master\\WWW\\WWW.TestHelpers",
+        "C:\\Workspaces\\TFS15\\Website\\Master\\WWW\\WWW.Tests",
+        "C:\\Workspaces\\TFS15\\Website\\Master\\WWW\\WWW.Web.JasmineTests",
+        "C:\\Workspaces\\TFS15\\Website\\Master\\WWW\\WWW.Web.Tests",
+        "C:\\Workspaces\\TFS15\\Website\\Master\\WWW\\WWW.Web.Utilities",
+        "C:\\Workspaces\\TFS15\\Website\\Master\\WWW\\WWW.Web.Utilities.Tests"
+    ],
+    "exclusions": [
+        {"name": "jQuery", "pattern": "**/jQuery/**"},
+        {"name": "Node Modules", "pattern": "node_modules/**"},
+        {"name": "Obj", "pattern": "obj/**"},
+        {"name": "Bin", "pattern": "bin/**"},
+        {"name": "App_Data", "pattern": "bin/**"},
+        {"name": "App_GlobalResources", "pattern": "bin/**"}
+    ],
+    "fileTypes": [
+        {"name": "C#", "pattern": "**/*.cs"},
+        {"name": "JavaScript", "pattern": "**/*.js"},
+        {"name": "CSHTML", "pattern": "**/*.cshtml"},
+        {"name": "HTML", "pattern": "**/*+(.html|*.htm)"}
+    ]
+}
