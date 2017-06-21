@@ -21,7 +21,7 @@ class FileTypeAnalyzer {
 
     getFilesByType(fileType) {
         glob(fileType.pattern, {cwd: this.directory}, (errors, files) =>
-            this.processExclusions(errors, files, fileType, this.directory))
+            this.processExclusions(errors, files, fileType))
     }
 
     processExclusions(error, files, fileType) {
@@ -33,8 +33,9 @@ class FileTypeAnalyzer {
 
         let format =
             `${path.basename(this.directory)} - ${fileType.name} File Count:`
-
-        console.log(format, files.length)
+        if (files.length > 0) {
+            console.log(format, files.length)
+        }
     }
 }
 

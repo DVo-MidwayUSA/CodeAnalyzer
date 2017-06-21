@@ -25,6 +25,8 @@
     "fileTypes": [
         {"name": "C#", "pattern": "**/*.cs"},
         {"name": "JavaScript", "pattern": "**/*.js"},
+        {"name": "CSS", "pattern": "**/*.css"},
+        {"name": "Sass", "pattern": "**/*.scss"},
         {"name": "CSHTML", "pattern": "**/*.cshtml"},
         {"name": "HTML", "pattern": "**/*+(.html|*.htm)"}
     ]
