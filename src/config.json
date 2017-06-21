@@ -29,5 +29,6 @@
         {"name": "Sass", "pattern": "**/*.scss"},
         {"name": "CSHTML", "pattern": "**/*.cshtml"},
         {"name": "HTML", "pattern": "**/*+(.html|*.htm)"}
-    ]
+    ],
+    "output": "C:\\Test\\test.csv"
 }

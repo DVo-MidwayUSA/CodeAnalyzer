@@ -9,9 +9,10 @@ const config = require('./config')
 const exclusions = config.exclusions
 const fileTypes = config.fileTypes
 
-class FileTypeAnalyzer {
+class Analyzer {
     constructor(directory) {
         this.directory = directory
+        this.result = []
     }
 
     analyze() {
@@ -31,12 +32,9 @@ class FileTypeAnalyzer {
             })
         })
 
-        let format =
-            `${path.basename(this.directory)} - ${fileType.name} File Count:`
-        if (files.length > 0) {
-            console.log(format, files.length)
-        }
+        this.result.push(`${path.basename(this.directory)} - ${fileType.name} File Count: ${files.length}`)
+        console.log(this.result)
     }
 }
 
-module.exports = FileTypeAnalyzer
+module.exports = Analyzer
