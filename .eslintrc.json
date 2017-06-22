@@ -1,34 +1,53 @@
 {
-    "env": {
-        "browser": true,
-        "commonjs": true,
-        "es6": true,
-        "node": true
-    },
-    "extends": [
-        "eslint:recommended",
-        "google"
-    ],
-    "parserOptions": {
-        "sourceType": "module"
-    },
-    "rules": {
-        "indent": [
-            "error",
-            4
+  "env": {
+    "browser": true,
+    "es6": false,
+    "jasmine": true,
+    "jquery": true
+  },
+  "extends": [
+    "eslint:recommended",
+    "google",
+    "angular"
+  ],
+  "globals": {
+    "angular": false,
+    "module": false,
+    "inject": false
+  },
+  "parserOptions": {
+    "sourceType": "module" // we are always in strict mode even without 'use strict'
+  },
+  "rules": {
+    "linebreak-style": "off", // we aren't super concerned with LF or CRLF
+    "no-var": "off", // allow us to still use var
+    "require-jsdoc": "off", // don't require JSDoc
+    "spaced-comment": [
+      1,
+      "always",
+      {
+        "exceptions": [
+          "=",
+          "-"
         ],
-        "linebreak-style": [
-            "error",
-            "windows"
-        ],
-        "quotes": [
-            "error",
-            "single"
-        ],
-        "semi": [
-            "error",
-            "never"
-        ],
-        "require-jsdoc": "off"
-    }
+        "markers": [
+          "/",
+          "@",
+          "#",
+          "!",
+          "!<"
+        ]
+      }
+    ], // ignore /// references
+    "max-len": [
+      2,
+      {
+        "code": 120,
+        "ignoreUrls": true,
+        "ignoreTrailingComments": true,
+        "ignoreStrings": true,
+        "ignoreComments": true
+      }
+    ] // ignore comments, urls, and strings
+  }
 }
