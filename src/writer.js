@@ -1,21 +1,21 @@
 'use strict';
 
 const fs = require('fs');
-const csv = require('fast-csv');
+const CsvWriter = require('csv-write-stream');
 const config = require('./config');
 
 const output = config.output;
 
 class Writer {
     constructor() {
-        this.file = output;
+        this.file = output.location;
     }
 
     append(data) {
-        let content = fs.readFileSync(this.file, 'utf8');
-        console.log(content);
-        console.log(data);
-        fs.writeFileSync(this.file, content);
+        this.writer = new CsvWriter(output.headers);
+        this.writer.pipe(fs.createWriteStream(this.file, {flags: 'a'}));
+        this.writer.write(data);
+        this.writer.end();
     }
 }
 

@@ -30,5 +30,12 @@
         {"name": "CSHTML", "pattern": "**/*.cshtml"},
         {"name": "HTML", "pattern": "**/*+(.html|*.htm)"}
     ],
-    "output": "C:\\Test\\test.csv"
+    "output": {
+        "location": "C:\\Test\\test.csv",
+        "headers": [
+            "Project",
+            "File Type",
+            "Count"
+        ]
+    }
 }

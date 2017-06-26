@@ -12,12 +12,16 @@ const fileTypes = config.fileTypes;
 class Analyzer {
     constructor(directory) {
         this.directory = directory;
-        this.result = [];
+        this.results = [];
     }
 
     analyze() {
+        let promise = new Promise((resolve, reject) => {
         fileTypes.forEach(
             (fileType) => this.getFilesByType(fileType));
+
+        });
+        return deferred.promise;
     }
 
     getFilesByType(fileType) {
@@ -32,8 +36,14 @@ class Analyzer {
             });
         });
 
-        this.result.push(`${path.basename(this.directory)} - ${fileType.name} File Count: ${files.length}`);
-        console.log(this.result);
+        let result = {
+            'Project': path.basename(this.directory),
+            'File Type': fileType.name,
+            'Count': files.length,
+        };
+
+        this.results.push(result);
+        deferred.resolve(this.results);
     }
 }
 
